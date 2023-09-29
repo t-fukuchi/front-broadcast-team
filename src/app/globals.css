@@ -1,0 +1,35 @@
+:root {
+  background-color: black;
+  color: white;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Serif JP', serif !important;
+}
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #000000 #777777;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 9px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #777777;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #000000;
+  }
+
+  a, a:visited {
+    color: white;
+    text-decoration: none;
+  }
