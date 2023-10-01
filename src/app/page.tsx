@@ -8,12 +8,12 @@ export default function Home() {
 
 
   return (
-    <Box sx={{ p: 5 }} position={"relative"}>
+    <>
       <motion.img
         key={pathName}
-        src="/top.jpg" style={{ width: "100%", height: "85vh", borderRadius: "2rem" }}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.3 }}
+        src="/top.jpg" style={{ objectFit: "none", position:"absolute", top:0, left:0, bottom:0, right: 0, opacity: 0.3, margin:"auto" }}
+        initial={{  width: "0%", height: "0%", }}
+        animate={{  width: "100%", height: "100%",  }}
         exit={{ opacity: 0 }}
         transition={{ duration: 2 }}
 
@@ -22,7 +22,9 @@ export default function Home() {
         initial={{ opacity: 0, "transform": "translate(-50%, 0%)", }}
         animate={{ opacity: 1, "transform": "translate(-50%, -50%)", }}
         transition={{ duration: 2, delay: 0.5 }}
-      >逃避行のすゝめ</motion.p>
-    </Box>
+      >
+        逃避行のすゝめ
+      </motion.p>
+    </>
   )
 }
