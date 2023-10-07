@@ -1,13 +1,20 @@
 "use client";
-import { AppBar, Box, Card, CardContent, CardMedia, CssBaseline, IconButton, Toolbar, Typography } from "@mui/material";
+import { Skeleton } from "@mui/material";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 export default function Home() {
+
+  const [loaded, setLoaded] = useState(false);
+  useEffect(() => {
+    setLoaded(true);
+  }, [])
 
   const pathName = usePathname()
 
 
   return (
+    loaded?
     <>
       <motion.img
         key={pathName}
@@ -26,5 +33,7 @@ export default function Home() {
         逃避行のすゝめ
       </motion.p>
     </>
+    :
+    <Skeleton animation="wave" variant="rounded" style={{"height": "7.5vh", "width": "30vw", position: "absolute", "top": "50%", "left": "50%", "transform": "translate(-50%, -50%)"}}/>
   )
 }

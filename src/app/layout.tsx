@@ -1,9 +1,10 @@
 "use client";
-import { ThemeProvider } from '@emotion/react'
-import './globals.css'
-import { AppBar, Box, Button, Toolbar, Typography, createTheme } from '@mui/material';
-import Link from 'next/link';
+import { ThemeProvider } from '@emotion/react';
+import { AppBar, Box, Toolbar, Typography, createTheme } from '@mui/material';
 import { AnimatePresence } from 'framer-motion';
+import Link from 'next/link';
+import { Suspense } from 'react';
+import './globals.css';
 
 const darkTheme = createTheme({
   palette: {
@@ -19,6 +20,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+
+
   return (
     <html lang="en">
       <head>
@@ -46,7 +49,9 @@ export default function RootLayout({
               </Toolbar>
             </AppBar>
             <AnimatePresence mode="wait">
-              {children}
+              <Suspense>
+                {children}
+              </Suspense>
             </AnimatePresence>
           </Box>
         </ThemeProvider>
